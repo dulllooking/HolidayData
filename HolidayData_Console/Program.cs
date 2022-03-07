@@ -59,12 +59,6 @@ namespace HolidayData_Console
             // 資料行 : "date","name","isHoliday","holidayCategory","description"\n
 
             ApplicationDbContext db = new ApplicationDbContext();
-            string fileName = "政府行政機關辦公日曆表.csv";
-            // C:\Users\user\source\repos\HolidayData\HolidayData_Console\bin\Debug
-            DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
-            // 宣告 DirectoryInfo 後可用 .Parent 搭配 .FullName 取得上層資料夾位置
-            string filePath = dir.Parent.Parent.FullName + "\\File\\" + fileName;
-            
             // 先清空並歸零 index
             db.Database.ExecuteSqlCommand("TRUNCATE TABLE HolidayInfoes");
             db.SaveChanges();
